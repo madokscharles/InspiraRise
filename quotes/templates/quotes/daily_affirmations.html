@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>Daily Affirmations</h1>
-<p>Content for daily affirmations goes here.</p>
+<div class="affirmations-container">
+    <h1>Daily Affirmations</h1>
+    {% for affirmation in affirmations %}
+        <div class="affirmation">
+            <img src="{% static 'quotes/images/logo.png' %}" alt="InspiraRise Logo" class="logo">
+            <p class="date">{{ affirmation.created_at|date:"F j, Y" }}</p>
+            <p>{{ affirmation.text }}</p>
+        </div>
+    {% empty %}
+        <p>No affirmations available.</p>
+    {% endfor %}
+</div>
+
+<div class="subscription-container">
+    <h2>Subscribe to Get Daily Affirmations</h2>
+    <form method="post" action="{% url 'daily_affirmations' %}">
+        {% csrf_token %}
+        {{ subscription_form.as_p }}
+        <button type="submit">Subscribe</button>
+    </form>
+</div>
+
 {% endblock %}

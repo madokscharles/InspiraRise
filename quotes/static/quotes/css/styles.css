@@ -150,3 +150,68 @@ h1, h2 {
     text-align: center;
     color: var(--secondary-color);
 }
+
+/* Styles for Daily Affirmations page */
+/* Styles for Daily Affirmations page */
+/* Center content */
+.affirmations-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.affirmation {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+}
+
+.affirmation .logo {
+    height: 120px;
+    margin-bottom: -30px;
+}
+
+.date {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.subscription-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.subscription-container form {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.subscription-container input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.subscription-container button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+.subscription-container button:hover {
+    background-color: #3A5A80;
+    color: var(--secondary-color);
+}

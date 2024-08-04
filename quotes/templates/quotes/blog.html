@@ -1,6 +1,14 @@
+<!-- templates/quotes/blog.html -->
 {% extends 'base.html' %}
 
 {% block content %}
 <h1>Blog</h1>
-<p>Content for blog goes here.</p>
+{% for post in posts %}
+<article>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    <small>Published on {{ post.created_at }}</small>
+</article>
+<hr>
+{% endfor %}
 {% endblock %}

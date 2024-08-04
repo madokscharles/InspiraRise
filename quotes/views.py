@@ -1,7 +1,8 @@
 import requests
-from django.shortcuts import render
-from .models import Category
-from .forms import QuoteForm
+from django.shortcuts import render, redirect
+from django.conf import settings
+from .models import Category, DailyAffirmation, BlogPost, Subscriber
+from .forms import QuoteForm, SubscriptionForm
 
 # Create your views here.
 def get_quotes_from_api(category=None):
@@ -37,8 +38,27 @@ def quote_view(request):
 
 
 def daily_affirmations(request):
-    return render(request, 'quotes/daily_affirmations.html')
+    if request.method == "POST":
+        subscription_form = SubscriptionForm(request.POST)
+        if subscription_form.is_valid():
+            subscription_form.save()
+            return redirect('subscription_success')  # Redirects to a success page after subscribing
+    else:
+        subscription_form = SubscriptionForm()
+
+    affirmations = DailyAffirmation.objects.all().order_by('-created_at')
+    context = {
+        'subscription_form': subscription_form,
+        'affirmations': affirmations,
+    }
+    
+    return render(request, 'quotes/daily_affirmations.html', context)
 
 
 def blog(request):
-    return render(request, 'quotes/blog.html')
+    posts = BlogPost.objects.all().order_by('-created_at')
+    return render(request, 'quotes/blog.html', {'posts': posts})
+
+
+def subscription_success(request):
+    return render(request, 'quotes/subscription_success.html')
