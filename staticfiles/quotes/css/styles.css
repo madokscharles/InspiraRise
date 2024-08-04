@@ -1,0 +1,68 @@
+/* styles.css */
+:root {
+    --primary-color: #A8DADC;
+    --secondary-color: #F1FAEE;
+    --accent-color: #457B9D;
+    --background-color: #1D3557;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar a {
+    color: var(--background-color);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+.logo {
+    height: 50px;
+}
+
+.content {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+h1, h2 {
+    color: var(--secondary-color);
+}
+
+form button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}

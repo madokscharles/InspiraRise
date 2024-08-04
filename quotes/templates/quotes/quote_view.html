@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="generate-quotes">
+        <h1 class="discover">Discover Your Daily Inspiration</h1>
+        <form method="get" class="quote-form">
+            <div class="form-group">
+                <label for="category">Choose a Category:</label>
+                {{ form.category }}
+            </div>
+            <button type="submit" class="submit-button">Get Quote</button>
+        </form>
+        <br>
+    </div>
+
+    {% if quotes %}
+        <div class="quote-container">
+            <div class="quote-content">
+                <h3>"{{ quotes.content }}"</h3>
+                <p class="quote-author">- {{ quotes.author }}</p>
+                <hr>
+                <p class="author-info">
+                    {% if quotes.author_info %}
+                        {{ quotes.author_info }}
+                    {% else %}
+                        Author is anonymous
+                    {% endif %}
+                </p>
+                <hr>
+            </div>
+    {% else %}
+            <p class="start-click">Select a Category and click Get Quote</p>
+    {% endif %}
+        </div>
+{% endblock %}

@@ -1,0 +1,152 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #A8DADC;
+    --secondary-color: #F1FAEE;
+    --accent-color: #457B9D;
+    --background-color: #1D3557;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+
+/*Home Styling*/
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar a {
+    color: var(--background-color);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+}
+
+.logo {
+    height: 80px;
+}
+
+h1, h2 {
+    color: var(--secondary-color);
+}
+
+.generate-quotes {
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.quote-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.form-group select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #1D3557;
+    background-color: var(--secondary-color);
+    color: #1D3557;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group select:focus {
+    border-color: #457B9D;
+    box-shadow: 0 0 10px rgba(69, 123, 157, 0.5);
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+.quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-top: 20px;
+}
+
+.quote-content {
+    background: linear-gradient(135deg, #1D3557, #457B9D);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+}
+
+.quote-content h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    font-family: 'Playfair Display', serif;
+    color: #fff; /* White text color */
+}
+
+.quote-content .quote-author {
+    font-size: 1rem;
+    font-style: italic;
+    color: #F1FAEE;
+}
+
+.quote-content .author-info {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #fff; /* White text color */
+}
+
+.start-click {
+    font-size: 1rem;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary-color);
+}
