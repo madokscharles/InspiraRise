@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Dashboard</h1>
+<ul>
+    <li><a href="{% url 'manage_affirmations' %}">Manage Daily Affirmations</a></li>
+    <li><a href="{% url 'manage_blogs' %}">Manage Blogs</a></li>
+    <li><a href="{% url 'manage_subscribers' %}">Manage Subscribers</a></li>
+</ul>
+{% endblock %}

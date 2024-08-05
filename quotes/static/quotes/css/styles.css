@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--background-color) !important;
     font-family: Arial, sans-serif;
     color: var(--secondary-color);
     margin: 0;
@@ -46,7 +46,7 @@ body {
 }
 
 h1, h2 {
-    color: var(--secondary-color);
+    color: var(--secondary-color) !important;
 }
 
 .generate-quotes {
@@ -152,8 +152,6 @@ h1, h2 {
 }
 
 /* Styles for Daily Affirmations page */
-/* Styles for Daily Affirmations page */
-/* Center content */
 .affirmations-container {
     display: flex;
     flex-direction: column;
@@ -177,7 +175,7 @@ h1, h2 {
 
 .affirmation .logo {
     height: 120px;
-    margin-bottom: -30px;
+    margin-bottom: -10px;
 }
 
 .date {
@@ -193,6 +191,7 @@ h1, h2 {
 .subscription-container form {
     display: inline-block;
     margin-top: 10px;
+    color: #888;
 }
 
 .subscription-container input[type="email"] {
@@ -214,4 +213,26 @@ h1, h2 {
 .subscription-container button:hover {
     background-color: #3A5A80;
     color: var(--secondary-color);
+}
+
+.previous-affirmations-carousel {
+    margin-top: 100px;
+}
+
+.previous-affirmations-carousel .affirmation {
+    font-size: 1rem;
+}
+
+.previous-affirmations-carousel h2 {
+    align-items: center;
+    text-align: center;
+}
+.carousel-item .affirmation {
+    margin: 0 auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--background-color);
+    border-radius: 50%;
 }

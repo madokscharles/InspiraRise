@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Manage Daily Affirmations</h1>
+<a href="{% url 'add_affirmation' %}">Add New Affirmation</a>
+<ul>
+    {% for affirmation in affirmations %}
+    <li>
+        {{ affirmation.text }}
+        <a href="{% url 'edit_affirmation' affirmation.id %}">Edit</a>
+        <a href="{% url 'delete_affirmation' affirmation.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

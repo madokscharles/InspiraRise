@@ -4,15 +4,15 @@
 {% block content %}
 <div class="affirmations-container">
     <h1>Daily Affirmations</h1>
-    {% for affirmation in affirmations %}
+    {% if current_affirmation %}
         <div class="affirmation">
             <img src="{% static 'quotes/images/logo.png' %}" alt="InspiraRise Logo" class="logo">
-            <p class="date">{{ affirmation.created_at|date:"F j, Y" }}</p>
-            <p>{{ affirmation.text }}</p>
+            <p class="date">{{ current_affirmation.created_at|date:"F j, Y" }}</p>
+            <p>{{ current_affirmation.text }}</p>
         </div>
-    {% empty %}
-        <p>No affirmations available.</p>
-    {% endfor %}
+    {% else %}
+        <p>No affirmation available for today.</p>
+    {% endif %}
 </div>
 
 <div class="subscription-container">
@@ -22,6 +22,34 @@
         {{ subscription_form.as_p }}
         <button type="submit">Subscribe</button>
     </form>
+</div>
+
+<div class="previous-affirmations-carousel">
+    <h2>Previous Affirmations</h2>
+    {% if previous_affirmations %}
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for affirmation in previous_affirmations %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="affirmation">
+                            <p class="date">{{ affirmation.created_at|date:"F j, Y" }}</p>
+                            <p>{{ affirmation.text }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    {% else %}
+        <p>No previous affirmations available.</p>
+    {% endif %}
 </div>
 
 {% endblock %}
