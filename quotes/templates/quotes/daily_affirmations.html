@@ -2,11 +2,17 @@
 {% load static %}
 
 {% block content %}
+<div class="blog-cover">
+    <img src="{% static 'quotes/images/pic4.png' %}" alt="Daily Affirmations" class="cover-image">
+    <div class="cover-text">
+        <h1>Daily Affirmations</h1>
+    </div>
+</div>
+
 <div class="affirmations-container">
-    <h1>Daily Affirmations</h1>
     {% if current_affirmation %}
         <div class="affirmation">
-            <img src="{% static 'quotes/images/logo.png' %}" alt="InspiraRise Logo" class="logo">
+            <img src="{% static 'quotes/images/pic1.png' %}" alt="InspiraRise Daily Affirmations" class="logo">
             <p class="date">{{ current_affirmation.created_at|date:"F j, Y" }}</p>
             <p>{{ current_affirmation.text }}</p>
         </div>

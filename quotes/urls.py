@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path, include
 from .views import (
     quote_view, daily_affirmations, blog, subscription_success,
     dashboard, manage_affirmations, add_affirmation, edit_affirmation, delete_affirmation,
     manage_blogs, add_blog, edit_blog, delete_blog, manage_subscribers
 )
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', quote_view, name='home'),
@@ -21,3 +23,6 @@ urlpatterns = [
     path('dashboard/blogs/delete/<int:pk>/', delete_blog, name='delete_blog'),
     path('dashboard/subscribers/', manage_subscribers, name='manage_subscribers'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

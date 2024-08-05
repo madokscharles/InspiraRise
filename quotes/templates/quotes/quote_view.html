@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<div class="blog-cover">
+    <img src="{% static 'quotes/images/pic3.png' %}" alt="Quotes" class="cover-image">
+    <div class="cover-text">
+        <h1>Quotes</h1>
+    </div>
+</div>
+
     <div class="generate-quotes">
-        <h1 class="discover">Discover Your Daily Inspiration</h1>
+        <h1 class="discover">Elevate Your Day with Powerful Quotes</h1>
         <form method="get" class="quote-form">
             <div class="form-group">
                 <label for="category">Choose a Category:</label>

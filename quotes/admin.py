@@ -12,7 +12,13 @@ class QuoteAdmin(admin.ModelAdmin):
 
 # Register DailyAffirmation and BlogPost models
 admin.site.register(DailyAffirmation)
-admin.site.register(BlogPost)
+
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at')
+    search_fields = ('title', 'content')
+    fields = ('title', 'content', 'image')
+
+admin.site.register(BlogPost, BlogPostAdmin)
 
 @admin.register(Subscriber)
 class SubscriberAdmin(admin.ModelAdmin):

@@ -1,14 +1,26 @@
 <!-- templates/quotes/blog.html -->
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>Blog</h1>
-{% for post in posts %}
-<article>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
-    <small>Published on {{ post.created_at }}</small>
-</article>
-<hr>
-{% endfor %}
+<div class="blog-cover">
+    <img src="{% static 'quotes/images/pic2.png' %}" alt="Our Blog Cover" class="cover-image">
+    <div class="cover-text">
+        <h1>Our Blog</h1>
+    </div>
+</div>
+
+<div class="blog-container">
+    {% for post in posts %}
+        <article class="blog-post">
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
+            {% endif %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content|linebreaks }}</p>
+            <small class="date">Published on {{ post.created_at|date:"F j, Y" }}</small>
+        </article>
+        <hr>
+    {% endfor %}
+</div>
 {% endblock %}

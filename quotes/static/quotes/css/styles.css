@@ -174,8 +174,7 @@ h1, h2 {
 }
 
 .affirmation .logo {
-    height: 120px;
-    margin-bottom: -10px;
+    height: 100px;
 }
 
 .date {
@@ -235,4 +234,72 @@ h1, h2 {
 .carousel-control-next-icon {
     background-color: var(--background-color);
     border-radius: 50%;
+}
+
+/* Styles for Blog page */
+.blog-cover {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cover-text h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.blog-post {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.blog-post img {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    max-width: 40%;
+    border-radius: 8px;
+}
+
+.blog-post h2 {
+    color: var(--background-color) !important;
+    margin-top: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.7rem;
+}
+
+.blog-post p {
+    color: #021526;
+}
+
+.date {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #aaa;
 }
