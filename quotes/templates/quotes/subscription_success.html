@@ -2,6 +2,37 @@
 {% load static %}
 
 {% block content %}
+<style>
+  .success-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      text-align: center;
+  }
+  .success-container h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+  }
+  .success-container p {
+    color: azure;
+  }
+  .success-container a {
+      color: #A8DADC;
+      text-decoration: none;
+      font-size: 1.2em;
+  }
+  .success-container a:hover {
+      color: #F1FAEE;
+  }
+</style>
+
+<div class="success-container">
   <h1>Subscription Successful</h1>
   <p>Thank you for subscribing to receive daily affirmations!</p>
+  <p><a href="{% url 'home' %}">Go home</a></p>
+</div>
+
+  
 {% endblock %}
